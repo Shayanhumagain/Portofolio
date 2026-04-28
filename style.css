@@ -1,0 +1,141 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 15px 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-search {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navbar_logo h1 {
+    font-size: 32px;
+    color: #c74343;
+}
+
+.navbar ul {
+    list-style: none;
+    gap: 20px;
+    display: flex;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #c74343;
+    transition: 0.3s ease;
+}
+
+.navbar ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: cornsilk;
+    transition: 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: rgb(238, 227, 227);
+}
+
+.navbar ul li a:hover::before {
+    width: 100%;
+}
+
+.navbar-search input {
+    padding: 7px 15px;
+    border-radius: 25px;
+    outline: none;
+    font-size: 18px;
+    width: 150px;
+    background-color: #333;
+    color: #966767;
+    transition: 0.3s ease;
+}
+
+.navbar-search input:focus {
+    width: 200px;
+    background-color: #222;
+}
+
+.navbar-search button {
+    padding: 7px 15px;
+    font-size: 18px;
+    background-color: #c74343;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.navbar-search button:hover {
+    background-color: rgb(142, 41, 41);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #c74343;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
+    .navbar ul {
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        margin-top: 10px;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar-search {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        /* keeps input + button together */
+    }
+
+    .navbar-search input {
+        width: 150px;
+        /* keep same as desktop to avoid stretching issues */
+        margin-right: 10px;
+    }
+
+    .navbar-search button {
+        flex-shrink: 0;
+    }
+}
